@@ -1,0 +1,81 @@
+.setup {
+  min-height: 100vh;
+  background: #1a1a2e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.setup-box {
+  background: #16213e;
+  border: 2px solid #f0a500;
+  border-radius: 16px;
+  padding: 48px 40px;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+}
+
+.setup-title {
+  font-size: 2rem;
+  color: #f0a500;
+  margin-bottom: 8px;
+}
+
+.setup-subtitle {
+  color: #aaa;
+  margin-bottom: 32px;
+  font-size: 1rem;
+}
+
+.setup-players {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.setup-player-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.setup-player-label {
+  color: #f0a500;
+  font-size: 0.9rem;
+  min-width: 80px;
+  text-align: left;
+}
+
+.setup-input {
+  flex: 1;
+  background: #0f3460;
+  border: 1px solid #f0a500;
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: white;
+  font-size: 1rem;
+  outline: none;
+}
+
+.setup-input:focus {
+  border-color: #ffd700;
+}
+
+.setup-btn {
+  background: #f0a500;
+  color: #1a1a2e;
+  border: none;
+  border-radius: 8px;
+  padding: 14px 32px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  transition: background 0.2s;
+}
+
+.setup-btn:hover {
+  background: #ffd700;
+}
