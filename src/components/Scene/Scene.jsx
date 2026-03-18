@@ -3,6 +3,7 @@ import { OrbitControls, Environment } from '@react-three/drei'
 import { Table } from './Table'
 import { PlayerCards, EnvelopeCard } from './Cards'
 import { useGameStore } from '../../store/gameStore'
+import { Weapons } from './Weapons'
 
 export function Scene() {
   const players = useGameStore(s => s.players)
@@ -20,6 +21,7 @@ const playerPositions = [
         <pointLight position={[0, 6, 0]} intensity={0.8} color="#fff5e0" />
 
         <Table />
+        <Weapons />
 
         {/* Cartas dos jogadores nas bordas da mesa */}
         {players.map((_, i) => (
