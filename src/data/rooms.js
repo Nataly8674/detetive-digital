@@ -9,5 +9,5 @@ export const rooms = [
   { id: 8,  name: "Cemitério",        isNeutral: false },
   { id: 9,  name: "Estação de Trem",  isNeutral: false },
   { id: 10, name: "Boate",            isNeutral: false },
-  { id: 11, name: "Praça Central",    isNeutral: true  },
+  { id: 11, name: "Praça Central",    isNeutral: false  },
 ]

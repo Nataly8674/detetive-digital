@@ -8,8 +8,8 @@ export function Scene() {
   const players = useGameStore(s => s.players)
 
 const playerPositions = [
-  { position: [0, 0.2, -6.0], rotation: [0, 0, 0] },
-  { position: [0, 0.2,  6.0], rotation: [0, Math.PI, 0] },
+  { position: [0, 0.2, -5.5], rotation: [0, 0, 0] },
+  { position: [0, 0.2,  5.5], rotation: [0, Math.PI, 0] },
 ]
 
   return (

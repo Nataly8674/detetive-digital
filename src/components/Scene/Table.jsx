@@ -55,7 +55,7 @@ function Board() {
     { id: 2,  col: 1, row: 0 },  // Prefeitura
     { id: 3,  col: 2, row: 0 },  // Banco
     { id: 4,  col: 0, row: 1 },  // Hospital
-    { id: 11, col: 1, row: 1, neutral: true, large: true },  // Praça Central
+    { id: 11, name: "Praça Central", col: 1, row: 1, neutral: true },
     { id: 5,  col: 2, row: 1 },  // Mansão
     { id: 6,  col: 0, row: 2 },  // Floricultura
                                   // col:1 row:2 = vazio
@@ -63,6 +63,7 @@ function Board() {
     { id: 8,  col: 0, row: 3 },  // Cemitério
     { id: 9,  col: 1, row: 3 },  // Estação de Trem
     { id: 10, col: 2, row: 3 },  // Boate
+
   ]
 
     const pawns = [

@@ -110,39 +110,43 @@ export function PlayerCards({ playerIndex, position, rotation }) {
     setRevealed(prev => ({ ...prev, [cardId]: !prev[cardId] }))
   }
 
+  const cols = 6
+  const cardSpacingX = 0.85
+  const cardSpacingZ = 1.15
+
   return (
     <group position={position} rotation={rotation}>
-      {/* Label do jogador */}
       <Text
-      position={[0, 0.02, -1.2]}
-      rotation={[-Math.PI / 2, 0, 0]}
-      fontSize={0.14}
-      color="#ffd700"
-      anchorX="center"
-      anchorY="middle"
+        position={[0, 0.02, -1.8]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        fontSize={0.16}
+        color="#ffd700"
+        anchorX="center"
+        anchorY="middle"
       >
-      {player.name}
+        {player.name}
       </Text>
 
-      {/* Cartas do jogador */}
       {player.cards.map((card, i) => {
-      const col = i % 5
-      const row = Math.floor(i / 5)
-      return (
-        <Card
-        key={card.id}
-        position={[-1.6 + col * 0.82, 0.02 + i * 0.001, -0.6 + row * 1.1]}
-        rotation={[0, 0, 0]}
-        color={
-            card.type === 'suspect' ? '#fadbd8' :
-            card.type === 'weapon'  ? '#fdebd0' : '#d5f5e3'
-        }
-        label={card.name}
-        faceUp={!!revealed[card.id]}
-        onClick={() => toggleCard(card.id)}
-        />
-      )
-     })}
+        const col = i % cols
+        const row = Math.floor(i / cols)
+        const totalCols = Math.min(player.cards.length, cols)
+        const offsetX = -((totalCols - 1) * cardSpacingX) / 2
+        return (
+          <Card
+            key={card.id}
+            position={[offsetX + col * cardSpacingX, 0.02 + i * 0.001, -0.5 + row * cardSpacingZ]}
+            rotation={[0, 0, 0]}
+            color={
+              card.type === 'suspect' ? '#fadbd8' :
+              card.type === 'weapon'  ? '#fdebd0' : '#d5f5e3'
+            }
+            label={card.name}
+            faceUp={!!revealed[card.id]}
+            onClick={() => toggleCard(card.id)}
+          />
+        )
+      })}
     </group>
   )
 }

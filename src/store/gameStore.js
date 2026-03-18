@@ -21,7 +21,7 @@ export const useGameStore = create((set, get) => ({
     // 1. Embaralha cada categoria
     const shuffledSuspects = shuffle(suspects).map(s => ({ ...s, type: 'suspect' }))
     const shuffledWeapons  = shuffle(weapons).map(w => ({ ...w, type: 'weapon' }))
-    const shuffledRooms    = shuffle(rooms.filter(r => !r.isNeutral)).map(r => ({ ...r, type: 'room' }))
+    const shuffledRooms = shuffle(rooms).map(r => ({ ...r, type: 'room' }))
 
     // 2. Retira uma carta de cada para o envelope
     const envelope = {
