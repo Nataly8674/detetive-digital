@@ -107,3 +107,20 @@
   font-weight: bold;
   pointer-events: none;
 }
+
+.room-passage {
+  border-style: double;
+  border-width: 4px;
+}
+
+.room-passage-icon {
+  font-size: 10px;
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  opacity: 0.7;
+}
+
+.room {
+  position: relative;
+}

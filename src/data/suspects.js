@@ -1,10 +1,10 @@
 export const suspects = [
-  { id: 1, name: "Sr. Soturno",        color: "#4A235A" },
-  { id: 2, name: "Sra. Pavão",         color: "#1A5276" },
-  { id: 3, name: "Prof. Farida",       color: "#FFFFFF" },
-  { id: 4, name: "Dr. Orchid",         color: "#7D3C98" },
-  { id: 5, name: "Cel. Mostarda",      color: "#D4AC0D" },
-  { id: 6, name: "Srta. Escarlate",    color: "#C0392B" },
-  { id: 7, name: "Sr. Verde",          color: "#1E8449" },
-  { id: 8, name: "Coveiro Sérgio",     color: "#784212" },
+  { id: 1, name: "Sargento Bigode",           color: "#D4AC0D", startRoom: 2  },
+  { id: 2, name: "Chef Tony Gourmet",          color: "#784212", startRoom: 1  },
+  { id: 3, name: "Médica Dona Violeta",        color: "#C39BD3", startRoom: 4  },
+  { id: 4, name: "Coveiro Sérgio Soturno",     color: "#1C1C1C", startRoom: 8  },
+  { id: 5, name: "Advogado Sr. Marinho",       color: "#1E8449", startRoom: 11 },
+  { id: 6, name: "Mordomo James",              color: "#1A5276", startRoom: 5  },
+  { id: 7, name: "Dançarina Srtá. Rosa",       color: "#C0392B", startRoom: 10 },
+  { id: 8, name: "Florista Dona Branca",       color: "#F0F0F0", startRoom: 6  },
 ]

@@ -10,10 +10,15 @@ const ROOM_LAYOUT = [
   { id: 11, col: 2, row: 2 },
   { id: 5,  col: 3, row: 2 },
   { id: 6,  col: 1, row: 3 },
-  { id: 7,  col: 2, row: 3 },
-  { id: 8,  col: 3, row: 3 },
-  { id: 9,  col: 1, row: 4 },
-  { id: 10, col: 2, row: 4 },
+  { id: 7,  col: 3, row: 3 },
+  { id: 8,  col: 1, row: 4 },
+  { id: 9,  col: 2, row: 4 },
+  { id: 10, col: 3, row: 4 },
+]
+
+const SECRET_PASSAGES = [
+  { from: 4, to: 5, label: "Passagem secreta" },
+  { from: 2, to: 9, label: "Passagem secreta" },
 ]
 
 export function Board() {
@@ -70,14 +75,16 @@ export function Board() {
             {ROOM_LAYOUT.map(({ id, col, row }) => {
               const room = roomsById[id]
               if (!room) return null
+              const hasPassage = SECRET_PASSAGES.some(p => p.from === id || p.to === id)
               return (
                 <div
                   key={id}
-                  className={`room ${room.isNeutral ? 'room-neutral' : ''} ${selectedRoom === id ? 'room-selected' : ''}`}
+                  className={`room ${room.isNeutral ? 'room-neutral' : ''} ${selectedRoom === id ? 'room-selected' : ''} ${hasPassage ? 'room-passage' : ''}`}
                   style={{ gridColumn: col, gridRow: row }}
                   onClick={() => setSelectedRoom(selectedRoom === id ? null : id)}
                 >
                   <span className="room-name">{room.name}</span>
+                  {hasPassage && <span className="room-passage-icon">🔑</span>}
                 </div>
               )
             })}
