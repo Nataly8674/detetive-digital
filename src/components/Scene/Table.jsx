@@ -1,3 +1,5 @@
+import { Text } from '@react-three/drei'
+
 function Pawn({ position, color, name }) {
   return (
     <group position={position}>
@@ -91,21 +93,33 @@ return (
       </mesh>
 
       {/* Cômodos */}
-      {rooms.map(room => {
-        const x = startX + room.col * cellW
-        const z = startZ + room.row * cellH
-        return (
-          <group key={room.id} position={[x, 0.06, z]}>
-            <mesh receiveShadow>
-              <boxGeometry args={[2.4, 0.05, 1.6]} />
-              <meshStandardMaterial
-                color={room.neutral ? '#5a7a3a' : '#e8d4a0'}
-                roughness={0.7}
-              />
-            </mesh>
-          </group>
-        )
-      })}
+     {rooms.map(room => {
+     const x = startX + room.col * cellW
+     const z = startZ + room.row * cellH
+     return (
+         <group key={room.id} position={[x, 0.06, z]}>
+         <mesh receiveShadow>
+             <boxGeometry args={[2.4, 0.05, 1.6]} />
+             <meshStandardMaterial
+             color={room.neutral ? '#5a7a3a' : '#e8d4a0'}
+             roughness={0.7}
+             />
+         </mesh>
+         <Text
+             position={[0, 0.06, 0]}
+             rotation={[-Math.PI / 2, 0, 0]}
+             fontSize={0.18}
+             color={room.neutral ? '#ffffff' : '#2a1400'}
+             anchorX="center"
+             anchorY="middle"
+             maxWidth={2.2}
+             textAlign="center"
+         >
+              {room.name}
+         </Text>
+         </group>
+     )
+     })}
 
       {/* Peões */}
       {pawns.map(pawn => {
