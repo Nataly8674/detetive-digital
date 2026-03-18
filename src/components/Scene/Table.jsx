@@ -23,25 +23,25 @@ function Pawn({ position, color, name }) {
 export function Table() {
   return (
     <group>
-      {/* Pernas da mesa */}
-      {[[-6, -1.5, -4], [6, -1.5, -4], [-6, -1.5, 4], [6, -1.5, 4]].map(([x, y, z], i) => (
-        <mesh key={i} position={[x, y, z]} castShadow>
-          <boxGeometry args={[0.4, 3, 0.4]} />
-          <meshStandardMaterial color="#4a2e10" roughness={0.9} />
-        </mesh>
-      ))}
+     {/* Pernas da mesa */}
+     {[[-9.3, -1.5, -6], [9, -1.5, -6], [-9, -1.5, 6], [9, -1.5, 6]].map(([x, y, z], i) => (
+     <mesh key={i} position={[x, y, z]} castShadow>
+         <boxGeometry args={[0.4, 3, 0.4]} />
+         <meshStandardMaterial color="#4a2e10" roughness={0.9} />
+     </mesh>
+     ))}
 
-      {/* Tampo da mesa */}
-      <mesh receiveShadow castShadow position={[0, 0, 0]}>
-        <boxGeometry args={[14, 0.3, 10]} />
-        <meshStandardMaterial color="#5c3a1e" roughness={0.8} />
-      </mesh>
+     {/* Tampo da mesa */}
+     <mesh receiveShadow castShadow position={[0, 0, 0]}>
+     <boxGeometry args={[20, 0.3, 16]} />
+     <meshStandardMaterial color="#5c3a1e" roughness={0.8} />
+     </mesh>
 
-      {/* Feltro verde */}
-      <mesh receiveShadow position={[0, 0.17, 0]}>
-        <boxGeometry args={[13, 0.02, 9]} />
-        <meshStandardMaterial color="#2d5a1b" roughness={0.9} />
-      </mesh>
+     {/* Feltro verde */}
+     <mesh receiveShadow position={[0, 0.17, 0]}>
+     <boxGeometry args={[19, 0.02, 15]} />
+     <meshStandardMaterial color="#2d5a1b" roughness={0.9} />
+     </mesh>
 
       {/* Tabuleiro */}
       <Board />
