@@ -1,6 +1,6 @@
 import { useGameStore } from './store/gameStore'
 import { Setup } from './components/Setup/Setup'
-import { Board } from './components/Board/Board'
+import { Scene } from './components/Scene/Scene'
 
 function App() {
   const gameStarted = useGameStore(s => s.gameStarted)
@@ -8,7 +8,7 @@ function App() {
   return (
     <div>
       {!gameStarted && <Setup />}
-      {gameStarted && <Board />}
+      {gameStarted && <Scene />}
     </div>
   )
 }
